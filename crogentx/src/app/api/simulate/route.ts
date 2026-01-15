@@ -105,14 +105,7 @@ async function simulateTransaction(params: {
     issues.push('Transaction value is 0 for value-transfer operation');
   }
 
-// And line 135-141 - Change this:
 
-    gas: {
-      estimated: estimatedGas,
-      price: gasPrice,
-      costCRO: gasCostCRO.toFixed(6),
-      costUSD: (gasCostCRO * 0.15).toFixed(2), // Assuming CRO = $0.15
-    },
 
 // To this:
 
@@ -160,8 +153,8 @@ async function simulateTransaction(params: {
     gas: {
       estimated: estimatedGas,
       price: gasPrice,
-      costCRO: gasCostCRO.toFixed(6),
-      costUSD: (gasCostCRO * 0.15).toFixed(2), // Assuming CRO = $0.15
+      costCRO: gasCostMON.toFixed(6),
+      costUSD: (gasCostMON * 0.15).toFixed(2), // Assuming CRO = $0.15
     },
     analysis: {
       successProbability: (successProbability * 100).toFixed(1) + '%',

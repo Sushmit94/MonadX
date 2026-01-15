@@ -144,7 +144,7 @@ export default function SearchBar({ onSelectTransaction }: SearchBarProps) {
                           </span>
                           <span className="text-xs text-zinc-500">•</span>
                           <span className="text-xs text-zinc-500">
-                            {parseFloat(agent.totalVolume).toFixed(2)} CRO
+                            {parseFloat(agent.totalVolume).toFixed(2)} MON
                           </span>
                         </div>
                       </div>
@@ -193,7 +193,7 @@ export default function SearchBar({ onSelectTransaction }: SearchBarProps) {
                           <span className="text-xs text-zinc-500">{tx.agentName}</span>
                           <span className="text-xs text-zinc-500">•</span>
                           <span className="text-xs text-zinc-500">
-                            {parseFloat(tx.value).toFixed(4)} CRO
+                            {parseFloat(tx.value).toFixed(4)} MON
                           </span>
                         </div>
                       </div>

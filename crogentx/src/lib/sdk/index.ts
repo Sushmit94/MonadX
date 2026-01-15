@@ -1,15 +1,15 @@
 /**
- * CrogentX SDK - Main export
+ *  MonadX SDK - Main export
  */
 
 export {
-  CrogentXClient,
+ MonadXClient,
   createClient,
-  type CrogentXConfig,
+  type MonadXConfig,
   type TransactionQuery,
   type SimulateTransactionParams,
   type DebugTransactionParams,
-} from './crogentx-client';
+}  from './monadx-client';
 
 // Re-export types for convenience
 export type {

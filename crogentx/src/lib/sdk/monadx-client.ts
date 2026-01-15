@@ -1,16 +1,16 @@
 /**
- * CrogentX SDK - Client library for interacting with CrogentX API
+ *  MonadX SDK - Client library for interacting with MonadX API
  * 
  * Usage:
  * ```typescript
- * import { CrogentXClient } from 'crogentx-sdk';
+ * import { MonadXClient } from 'monadx-sdk'
  * 
- * const client = new CrogentXClient({ apiUrl: 'https://your-api.com' });
+ * const client = new MonadXClient({ apiUrl: 'https://your-api.com' });
  * const transactions = await client.transactions.list({ limit: 100 });
  * ```
  */
 
-export interface CrogentXConfig {
+export interface MonadXConfig {
   apiUrl: string;
   apiKey?: string;
 }
@@ -39,11 +39,11 @@ export interface DebugTransactionParams {
   transactionHash: string;
 }
 
-export class CrogentXClient {
+export class MonadXClient {
   private apiUrl: string;
   private apiKey?: string;
 
-  constructor(config: CrogentXConfig) {
+  constructor(config: MonadXConfig) {
     this.apiUrl = config.apiUrl.replace(/\/$/, ''); // Remove trailing slash
     this.apiKey = config.apiKey;
   }
@@ -248,8 +248,8 @@ export class CrogentXClient {
 /**
  * Convenience function to create a client
  */
-export function createClient(config: CrogentXConfig): CrogentXClient {
-  return new CrogentXClient(config);
+export function createClient(config: MonadXConfig): MonadXClient {
+  return new MonadXClient(config);
 }
 
 // Types are already exported above with their declarations

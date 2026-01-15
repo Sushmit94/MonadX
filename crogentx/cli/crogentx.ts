@@ -11,11 +11,11 @@
  */
 
 import { program } from 'commander';
-import { CrogentXClient } from '../src/lib/sdk/crogentx-client';
+import { MonadXClient } from '../src/lib/sdk/monadx-client';
 
 // Initialize client
 const API_URL = process.env.CROGENTX_API_URL || 'http://localhost:3000';
-const client = new CrogentXClient({ apiUrl: API_URL });
+const client = new MonadXClient({ apiUrl: API_URL });
 
 program
   .name('crogentx')
