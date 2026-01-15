@@ -1,25 +1,25 @@
 #!/usr/bin/env node
 
 /**
- * CrogentX CLI Tool
+ *  MonadX CLI Tool
  * 
  * Usage:
- *   crogentx transactions --limit 10
- *   crogentx agents --type payment
- *   crogentx simulate --instruction transfer --value 100 --agent 0x123...
- *   crogentx debug --tx 0xabc...
+ *  monadx transactions --limit 10
+ *   monadx agents --type payment
+ *  monadx simulate --instruction transfer...--value 100 --agent 0x123...
+ *   monadx debug --tx 0xabc...
  */
 
 import { program } from 'commander';
 import { MonadXClient } from '../src/lib/sdk/monadx-client';
 
 // Initialize client
-const API_URL = process.env.CROGENTX_API_URL || 'http://localhost:3000';
+const API_URL = process.env.MONADX_API_URL || 'http://localhost:3000';
 const client = new MonadXClient({ apiUrl: API_URL });
 
 program
-  .name('crogentx')
-  .description('CLI tool for CrogentX - Cronos x402 Transaction Analytics')
+  .name('monadx')
+  .description('CLI tool for MonadX - Monad x402 Transaction Analytics')
   .version('1.0.0');
 
 // Transactions command
@@ -53,7 +53,7 @@ program
           console.log(`${index + 1}. ${tx.transactionHash.slice(0, 10)}...`);
           console.log(`   Status: ${tx.status}`);
           console.log(`   Type: ${tx.instructionType}`);
-          console.log(`   Value: ${tx.value} CRO`);
+          console.log(`   Value: ${tx.value} MON`);
           console.log(`   Agent: ${tx.agentName || 'Unknown'}`);
           console.log(`   Gas: ${tx.gasUsed}\n`);
         });
@@ -88,7 +88,7 @@ program
           console.log(`${index + 1}. ${agent.name}`);
           console.log(`   Address: ${agent.address}`);
           console.log(`   Type: ${agent.type}`);
-          console.log(`   Balance: ${agent.balance} CRO`);
+          console.log(`   Balance: ${agent.balance} MON`);
           console.log(`   Status: ${agent.status}\n`);
         });
       }
@@ -104,7 +104,7 @@ program
   .description('Simulate an x402 transaction')
   .requiredOption('-i, --instruction <type>', 'Instruction type (transfer, swap, etc.)')
   .requiredOption('-a, --agent <agentId>', 'Agent ID')
-  .requiredOption('-v, --value <amount>', 'Transaction value in CRO')
+  .requiredOption('-v, --value <amount>', 'Transaction value in MON')
   .option('-t, --target <address>', 'Target address')
   .option('--json', 'Output as JSON')
   .action(async (options) => {
@@ -123,12 +123,12 @@ program
         console.log('\n📊 Simulation Results:\n');
         console.log(`Instruction: ${sim.instruction}`);
         console.log(`Agent: ${sim.agentId}`);
-        console.log(`Value: ${sim.value} CRO\n`);
+        console.log(`Value: ${sim.value} MON\n`);
         
         console.log('⛽ Gas Estimation:');
         console.log(`  Estimated Gas: ${sim.gas.estimated}`);
         console.log(`  Gas Price: ${sim.gas.price} Gwei`);
-        console.log(`  Total Cost: ${sim.gas.costCRO} CRO ($${sim.gas.costUSD})\n`);
+        console.log(`  Total Cost: ${sim.gas.costMON} MON ($${sim.gas.costUSD})\n`);
         
         console.log('📈 Analysis:');
         console.log(`  Success Probability: ${sim.analysis.successProbability}`);
@@ -228,8 +228,8 @@ program
         console.log(`Successful: ${stats.successfulTransactions}`);
         console.log(`Failed: ${stats.failedTransactions}`);
         console.log(`Success Rate: ${stats.successRate.toFixed(2)}%\n`);
-        console.log(`Total Volume: ${stats.totalVolume} CRO`);
-        console.log(`Avg Transaction: ${stats.avgTransactionValue} CRO\n`);
+        console.log(`Total Volume: ${stats.totalVolume} MON`);
+        console.log(`Avg Transaction: ${stats.avgTransactionValue} MON\n`);
         console.log(`Total Agents: ${stats.totalAgents}`);
         console.log(`Active Agents: ${stats.activeAgents}\n`);
       }
@@ -257,7 +257,7 @@ program
           const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : `${index + 1}.`;
           console.log(`${medal} ${agent.name}`);
           console.log(`   Transactions: ${agent.count}`);
-          console.log(`   Volume: ${agent.volume.toFixed(2)} CRO\n`);
+          console.log(`   Volume: ${agent.volume.toFixed(2)} MON\n`);
         });
       }
     } catch (error) {

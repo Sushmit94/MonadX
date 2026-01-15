@@ -15,9 +15,9 @@ if (!projectId) {
 
 // Set up metadata
 const metadata = {
-  name: 'CrogentX - Cronos x402 Developer Toolkit',
-  description: 'Transaction visualization, debugging, and analytics for Cronos x402',
-  url: 'https://crogentx.vercel.app', // origin must match your domain & subdomain
+  name:  'MonadX Observatory - Monad x402 Developer Toolkit',
+  description: 'Transaction visualization, debugging, and analytics for Monad x402',
+ url: 'https://monadx-observatory.vercel.app', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 

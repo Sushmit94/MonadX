@@ -1,10 +1,10 @@
 {
-  "name": "crogentx",
+  "name": "monadx",
   "version": "1.0.0",
   "private": false,
-  "description": "Developer toolkit for Cronos x402 - Transaction visualization, debugging, and analytics",
+ "description": "Developer toolkit for Monad x402 - Transaction visualization, debugging, and analytics",
   "keywords": [
-    "cronos",
+    "monad",
     "x402",
     "blockchain",
     "analytics",
@@ -17,12 +17,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/crogentx"
+    "url": "https://github.com/yourusername/monadx"
   },
   "main": "src/lib/sdk/index.ts",
   "types": "src/lib/sdk/index.ts",
   "bin": {
-    "crogentx": "./cli/crogentx.ts"
+   "monadx": "./cli/monadx.ts"
   },
   "exports": {
     ".": {
