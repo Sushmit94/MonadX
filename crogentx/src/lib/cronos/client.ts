@@ -35,7 +35,7 @@ export const MONAD_CHAIN = monadTestnet;
 export const MONAD_API_BASE_URL = 'https://api.monad.xyz/api';
 
 // x402 Facilitator endpoint
-export const X402_FACILITATOR_URL = 'https://x402-api.monad.xyz';
+export const X402_FACILITATOR_URL = process.env.NEXT_PUBLIC_X402_FACILITATOR_URL || 'https://x402-api.monad.xyz';
 
 // Helper to fetch from Monad API
 export async function fetchFromMonadAPI(endpoint: string, params?: Record<string, string>) {
