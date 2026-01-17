@@ -109,12 +109,7 @@ async function simulateTransaction(params: {
 
 // To this:
 
-    gas: {
-      estimated: estimatedGas,
-      price: gasPrice,
-      costMON: gasCostMON.toFixed(6),
-      costUSD: (gasCostMON * 0.15).toFixed(2), // Assuming MON = $0.15
-    },
+  
 
   if (valueNum > 10000) {
     warnings.push('Large transaction value - verify amount');
