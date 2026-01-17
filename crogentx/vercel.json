@@ -1,7 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "next build",
   "outputDirectory": ".next",
-  "devCommand": "npm run dev",
+  "devCommand": "next dev",
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["iad1"],
@@ -23,5 +23,8 @@
         }
       ]
     }
-  ]
+  ],
+  "env": {
+    "NEXT_PUBLIC_USE_MOCK_DATA": "true"
+  }
 }
